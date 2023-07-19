@@ -1,0 +1,64 @@
+<div class="text-center">
+  <h3>Login</h3>
+  
+  <form id="login_form" class="px-3 needs-validation center-form" novalidate method="POST" action="<?php echo base_url(); ?>login/process_login">
+    <!-- Form inputs and fields here -->
+    
+    <div class="input-group mt-4">
+      <div class="form-group text-center">
+        <div class="g-recaptcha" data-sitekey="6LevYjInAAAAADPgIJgpE6X_3J4jQQoLcv7aM_Z-"></div>
+        <div id="recaptcha-error" class="invalid-feedback" style="display: none;">Please fill in the reCAPTCHA field.</div>
+      </div>
+    </div>
+    
+    <div class="text-center">
+      <button class="confirm-btn mt-4" type="submit">Continue</button>
+    </div>
+    
+    <!-- Remaining form content -->
+  </form>
+</div>
+
+<script>
+  function validateForm() {
+    var response = grecaptcha.getResponse();
+    
+    if (response.length === 0) {
+      document.getElementById('recaptcha-error').style.display = 'block';
+      return false;
+    } else {
+      document.getElementById('recaptcha-error').style.display = 'none';
+      return true;
+    }
+  }
+  
+  document.getElementById('login_form').addEventListener('submit', function(e) {
+    if (!validateForm()) {
+      e.preventDefault();
+    }
+  });
+</script>
+
+v2 6LevYjInAAAAADPgIJgpE6X_3J4jQQoLcv7aM_Z-
+v3
+
+Use this site key in the HTML code your site serves to users.
+6LeN7zMnAAAAAPpwN-1kgyJcItrP9sY0K2sIeCgr
+
+secret key
+6LeN7zMnAAAAAIIYbyTJ2LXP6nkBS_BlUBXa02Qq
+
+<!-- <?php
+
+$recaptchaToken = $_POST['recaptcha_token'];
+$recaptchaResponse = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LeN7zMnAAAAAPpwN-1kgyJcItrP9sY0K2sIeCgr&response=$recaptchaToken");
+$recaptchaResult = json_decode($recaptchaResponse);
+
+if ($recaptchaResult->success && $recaptchaResult->action == 'submit' && $recaptchaResult->score >= 0.5) {
+
+  echo 'Captcha verification successful';
+} else {
+  
+  echo 'Captcha verification failed';
+}
+?> -->
