@@ -1,0 +1,16 @@
+https://github.com/git-guides/install-git
+
+Install git
+
+https://gitforwindows.org/
+
+git version
+
+Note: git-scm is a popular and recommended resource for downloading Git for Windows. The advantage of downloading Git from git-scm is that your download automatically starts with the latest version of Git included with the recommended command prompt, Git Bash .
+
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+
+git --version
+
+git init
