@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::get('/loginform',[ViewController::class,'recaptcha']);
 
 Route::get('/index',[ViewController::class,'index']);
+
+Route::get('/export',[ViewController::class,'exportbtn']);

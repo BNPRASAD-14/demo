@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get("/save/data",[ViewController::class,'store'])->name('contact.us.store');
+
+Route::get('/exportdata',[ViewController::class,'exportdata']);
