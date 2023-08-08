@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-require 'vendor/autoload.php';
+
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
@@ -127,6 +127,19 @@ class ViewController extends BaseController
               
 
         ]);
+    }
+
+    public function sequencedata(Request $request )
+    {
+        $position = $request->input('position');
+        $value = $request->input('value');
+
+        
+    }
+
+    public function file_upload(Request $request)
+    {
+        return view('file');
     }
 }
 

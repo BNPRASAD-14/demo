@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewController;
+use App\Exports\ExportData;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +25,9 @@ Route::get('/loginform',[ViewController::class,'recaptcha']);
 Route::get('/index',[ViewController::class,'index']);
 
 Route::get('/export',[ViewController::class,'exportbtn']);
+
+Route::get('/image-upload',[ViewController::class,'file_upload']);
+
+Route::get('/export-users', function () {
+    return Excel::download(new ExportData, 'users.xlsx');
+});

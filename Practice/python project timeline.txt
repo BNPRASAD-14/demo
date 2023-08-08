@@ -1,0 +1,16 @@
+E-commerece
+
+1.login system and register system
+2.create profile
+3.Edit profile
+4.delete profile
+5.show total user
+6.add user in your follow-list,like
+7.add post
+8.delete post
+9.edit post
+10.location on map
+11.share link of your profile.
+12.show post
+
+registration table 

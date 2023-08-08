@@ -1,0 +1,51 @@
+convert db data into excel.
+
+install reuire librareies
+
+composer require maatwebsite/excel
+
+create export class 
+
+php artisan make:export ExportData
+
+opening folder
+ app->Export->file_name
+
+add for data
+
+class ExportData implements FromQuery, WithHeadings
+
+use Maatwebsite\Excel\Concerns\FromArray;
+
+
+  public function query()
+    {
+        // Fetch data from the "form" table using an Eloquent query
+        return DB::table('form');
+    }
+
+    /**
+     * @return array
+     */
+    public function headings(): array
+    {
+        // Define the column headings for the Excel file
+        return [
+            'ID',
+            'Name',
+            'Email',
+            // Add more headings as per your database table's columns
+        ];
+    }
+
+for download data
+
+Route::get('/export-data', function () {
+    return Excel::download(new ExportData, 'data.xlsx');
+});
+
+
+
+#update profile
+
+
